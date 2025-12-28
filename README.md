@@ -88,7 +88,7 @@ Frontend: Next.js 15, React 19, TypeScript, Tailwind CSS v4
 
 ---
 
-📄 Лицензияmobile
+📄 Лицензия
 
 MIT © Даниил Петров
 
