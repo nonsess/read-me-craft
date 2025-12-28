@@ -3,8 +3,8 @@
 @layer base {
   :root {
     --color-primary: 99 102 241; /* indigo-500 */
-    --color-bg: 15 23 42;        /* slate-900 — тёмно-синий фон */
-    --color-text: 241 245 249;   /* slate-100 — светлый текст */
+    --color-bg: 15 23 42; /* slate-900 — тёмно-синий фон */
+    --color-text: 241 245 249; /* slate-100 — светлый текст */
   }
 
   h2 {

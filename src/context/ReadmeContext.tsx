@@ -41,7 +41,10 @@ type ReadmeAction =
   | { type: "TOGGLE_TECH_STACK"; payload: boolean }
   | { type: "UPDATE_TECH_STACK"; payload: Partial<ReadmeState["techStack"]> }
   | { type: "TOGGLE_GITHUB_STATS"; payload: boolean }
-  | { type: "UPDATE_GITHUB_STATS"; payload: Partial<ReadmeState["githubStats"]> }
+  | {
+      type: "UPDATE_GITHUB_STATS";
+      payload: Partial<ReadmeState["githubStats"]>;
+    }
   | { type: "TOGGLE_CONTACTS"; payload: boolean }
   | { type: "UPDATE_CONTACTS"; payload: Partial<ReadmeState["contacts"]> }
   | { type: "HYDRATE"; payload: ReadmeState };
@@ -83,15 +86,27 @@ function readmeReducer(state: ReadmeState, action: ReadmeAction): ReadmeState {
     case "UPDATE_BIO":
       return { ...state, bio: { ...state.bio, ...action.payload } };
     case "TOGGLE_TECH_STACK":
-      return { ...state, techStack: { ...state.techStack, enabled: action.payload } };
+      return {
+        ...state,
+        techStack: { ...state.techStack, enabled: action.payload },
+      };
     case "UPDATE_TECH_STACK":
       return { ...state, techStack: { ...state.techStack, ...action.payload } };
     case "TOGGLE_GITHUB_STATS":
-      return { ...state, githubStats: { ...state.githubStats, enabled: action.payload } };
+      return {
+        ...state,
+        githubStats: { ...state.githubStats, enabled: action.payload },
+      };
     case "UPDATE_GITHUB_STATS":
-      return { ...state, githubStats: { ...state.githubStats, ...action.payload } };
+      return {
+        ...state,
+        githubStats: { ...state.githubStats, ...action.payload },
+      };
     case "TOGGLE_CONTACTS":
-      return { ...state, contacts: { ...state.contacts, enabled: action.payload } };
+      return {
+        ...state,
+        contacts: { ...state.contacts, enabled: action.payload },
+      };
     case "UPDATE_CONTACTS":
       return { ...state, contacts: { ...state.contacts, ...action.payload } };
     default:
