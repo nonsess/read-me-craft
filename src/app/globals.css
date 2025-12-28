@@ -2,18 +2,46 @@
 
 @layer base {
   :root {
-    --color-primary: 99 102 241; /* hsl(237, 74%, 67%) = #6366f1 */
-    --color-bg: 249 250 251; /* #f9fafb */
-    --color-text: 30 41 59; /* #1e293b */
+    --color-primary: 99 102 241; /* indigo-500 */
+    --color-bg: 15 23 42;        /* slate-900 — тёмно-синий фон */
+    --color-text: 241 245 249;   /* slate-100 — светлый текст */
+  }
+
+  h2 {
+    color: var(--color-text);
   }
 
   body {
     @apply bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))];
+    -webkit-font-smoothing: antialiased;
   }
 }
 
 @layer components {
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6;
+  }
+}
+
+@layer base {
+  .markdown-body {
+    background: rgb(var(--color-bg)) !important;
+    color: rgb(var(--color-text)) !important;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  .markdown-body a {
+    color: rgb(var(--color-primary));
+    text-decoration: underline;
+  }
+
+  .markdown-body h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .markdown-body p {
+    margin-bottom: 1rem;
   }
 }
